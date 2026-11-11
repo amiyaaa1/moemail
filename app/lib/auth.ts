@@ -102,6 +102,8 @@ export const {
   }),
   providers: [
     GitHub({
+      // GitHub includes this RFC 9207 issuer in OAuth callback responses.
+      issuer: "https://github.com/login/oauth",
       clientId: process.env.AUTH_GITHUB_ID,
       clientSecret: process.env.AUTH_GITHUB_SECRET,
       allowDangerousEmailAccountLinking: true,
